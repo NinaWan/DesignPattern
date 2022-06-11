@@ -9,4 +9,5 @@
 # Refs
 
 1. [设计模式：可复用面向对象软件的基础](https://book.douban.com/subject/34262305/)
-2. [Runoob - 设计模式](https://www.runoob.com/design-pattern/design-pattern-intro.html)
+2. [Head First 设计模式](https://book.douban.com/subject/2243615/)
+3. [Runoob - 设计模式](https://www.runoob.com/design-pattern/design-pattern-intro.html)
