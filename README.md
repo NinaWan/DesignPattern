@@ -4,17 +4,17 @@ Aileen's study note of Design Pattern
 
 # Table of Content
 
-## 23 Design Patterns defined by Gang of Four
+## [23 Design Patterns defined by Gang of Four](./src/main/java/GoF/23_design_patterns.md)
 
-### Creational
+### [Creational](./src/main/java/GoF/creational/creational.md)
 
-* Factory Method 工厂方法模式
+* [Factory Method 工厂方法模式](./src/main/java/GoF/creational/factorymethod/factory_method.md)
 * Abstract Factory 抽象工厂模式
 * Builder 建造者
 * Prototype 原型
 * [Singleton 单例模式](./src/main/java/GoF/creational/singleton/singleton.md)
 
-### Behavioural
+### [Behavioral](./src/main/java/GoF/behavioral/behavioral.md)
 
 * Interpreter 解释器
 * Template Method 模板模式
@@ -28,7 +28,7 @@ Aileen's study note of Design Pattern
 * Strategy 策略
 * Visitor 访问者
 
-### Structural
+### [Structural](./src/main/java/GoF/structural/structural.md)
 
 * Adapter Class/Object 适配器
 * Bride 桥接

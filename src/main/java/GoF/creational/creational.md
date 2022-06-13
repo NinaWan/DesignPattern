@@ -1,6 +1,6 @@
 # 创建型模式 Creational Patterns
 
-1. Factory Method 工厂方法
+1. [Factory Method 工厂方法模式](factorymethod/factory_method.md)
 2. Abstract Factory 抽象工厂
 3. Builder 建造者
 4. Prototype 原型
