@@ -5,7 +5,6 @@ public abstract class Creator {
 
     public void method() {
         Product product = createProduct();
-        product.method1();
-        product.method2();
+        product.method();
     }
 }
