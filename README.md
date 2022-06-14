@@ -9,7 +9,7 @@ Aileen's study note of Design Pattern
 ### [Creational](./src/main/java/GoF/creational/creational.md)
 
 * [Factory Method 工厂方法模式](./src/main/java/GoF/creational/factorymethod/factory_method.md)
-* Abstract Factory 抽象工厂模式
+* [Abstract Factory 抽象工厂模式](./src/main/java/GoF/creational/abstractfactory/abstract_factory.md)
 * Builder 建造者
 * Prototype 原型
 * [Singleton 单例模式](./src/main/java/GoF/creational/singleton/singleton.md)
