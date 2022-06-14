@@ -19,8 +19,8 @@ class SimpleFactoryTest {
     @BeforeEach
     void setUp() {
         tested = new Client();
-        expectedOutput1 = "ConcreteProduct1::method1\nConcreteProduct1::method2\n";
-        expectedOutput2 = expectedOutput1 + "ConcreteProduct2::method1\nConcreteProduct2::method2\n";
+        expectedOutput1 = "ConcreteProduct1::method\n";
+        expectedOutput2 = expectedOutput1 + "ConcreteProduct2::method\n";
         System.setOut(new PrintStream(outContent));
     }
 

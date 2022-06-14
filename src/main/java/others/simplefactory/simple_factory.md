@@ -33,32 +33,20 @@
 
 ```java
 public abstract class Product {
-    public abstract void method1();
-
-    public abstract void method2();
+    public abstract void method();
 }
 
 public class ConcreteProduct1 extends Product {
     @Override
-    public void method1() {
-        System.out.println("ConcreteProduct1::method1");
-    }
-
-    @Override
-    public void method2() {
-        System.out.println("ConcreteProduct1::method2");
+    public void method() {
+        System.out.println("ConcreteProduct1::method");
     }
 }
 
 public class ConcreteProduct2 extends Product {
     @Override
-    public void method1() {
-        System.out.println("ConcreteProduct2::method1");
-    }
-
-    @Override
-    public void method2() {
-        System.out.println("ConcreteProduct2::method2");
+    public void method() {
+        System.out.println("ConcreteProduct2::method");
     }
 }
 ```
@@ -85,8 +73,7 @@ public class Client {
     public void method(String type) {
         Product product = Factory.createProduct(type);
         assert product != null;
-        product.method1();
-        product.method2();
+        product.method();
     }
 }
 ```

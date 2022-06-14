@@ -4,7 +4,6 @@ public class Client {
     public void method(String type) {
         Product product = Factory.createProduct(type);
         assert product != null;
-        product.method1();
-        product.method2();
+        product.method();
     }
 }
