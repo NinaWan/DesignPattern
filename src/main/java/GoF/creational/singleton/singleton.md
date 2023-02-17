@@ -55,7 +55,7 @@ public class Singleton{
 5. 静态内部类 Static inner class
 6. 枚举 Enum
 
-### 懒汉式(线程不安全) Lazy loading Thread unsafe
+### 方法一：懒汉式(线程不安全) Lazy loading Thread unsafe
 
 ```java
 public class Singleton {
@@ -84,7 +84,7 @@ public class Singleton {
     * 当两个线程同时执行到```if (instance == null)```这一语句时，如果此时instance还未被实例化，则两个线程都会执行```instance = new Singleton()```
       语句来创建对象，最终会产生两个单例对象。因此这种实现方式只适用于单线程环境。
 
-### 懒汉式(线程安全) Lazy loading Thread safe
+### 方法二：懒汉式(线程安全) Lazy loading Thread safe
 
 ```java
 public class Singleton {
@@ -110,10 +110,9 @@ public class Singleton {
 
 1. 效率低
     * 这种加锁方式锁的是整个方法，方法内的所有语句都是同步的，这样一个线程必须等待前一个线程完全执行完getInstance方法后才能开始执行该方法。
-    * 单例对象未被创建前，同步是必须的，但是单例对象被创建后，```if (instance == null)```
-      语句会返回false，并直接返回实例对象，不会执行对象创建语句。此时同步并不是必须的，在多线程下反而会极大地降低执行效率，因为每个后来的线程还是需要依次排队获取和释放锁才能获得实例对象。
+    * 单例对象未被创建前，同步是必须的，但是单例对象被创建后，```if (instance == null)```语句会返回false，并直接返回实例对象，不会执行对象创建语句。此时同步并不是必须的，在多线程下反而会极大地降低执行效率，因为每个后来的线程还是需要依次排队获取和释放锁才能获得实例对象。
 
-### 饿汉式 Eager
+### 方法三：饿汉式 Eager
 
 ```java
 public class Singleton {
@@ -138,7 +137,7 @@ public class Singleton {
     * 项目中可能定义了多个单例类，在类加载时就会全部被实例化，但是有的实例可能并不会被用到，但仍会占用内存资源。
 2. 如果单例类被多次加载，则会产生多个单例对象
 
-### 双重校验锁 Double-checked locking
+### 方法四：双重校验锁 Double-checked locking
 
 ```java
 public class Singleton {
@@ -175,8 +174,7 @@ public class Singleton {
 
    第一次校验比较好理解，是为了减少无意义同步，保证效率。
 
-   第二次校验是为了保证只有一个实例被创建。实例未被创建时，多个线程可能同时到达第一个```if (instance == null)```校验语句，
-   此时实例为空，所以线程都能通过第一次校验进入锁竞争，并且依次获得锁的拥有权执行同步代码块。
+   第二次校验是为了保证只有一个实例被创建。实例未被创建时，多个线程可能同时到达第一个```if (instance == null)```校验语句，此时实例为空，所以线程都能通过第一次校验进入锁竞争，并且依次获得锁的拥有权执行同步代码块。
    如果没有第二次校验，则能够进入同步代码块的线程都会创建一个新的实例，导致有多个单例实例被创建。
 
 2. 为什么实例变量要设为volatile
@@ -230,7 +228,7 @@ public class Singleton {
 
    因为锁的是整个getInstance方法，当```instance = new Singleton()```被执行时，其他线程是无法进入getInstance方法的，也就不会得到实例不为空的错误判断。
 
-### 静态内部类 Static inner class
+### 方法五：静态内部类 Static inner class
 
 ```java
 public class Singleton {
@@ -302,7 +300,7 @@ public class Singleton {
    这是因为每个类或接口，都有一个唯一的与之对应的初始化锁LC，当多个线程同时去初始化一个类的时候，只有一个线程可以获得这个初始化锁、执行&lt;clinit&gt;()方法。
    其他线程都会进入阻塞状态，等待活动线程执行完&lt;clinit&gt;()方法后被唤醒，被唤醒的线程之后并不会再进入&lt;clinit&gt;()方法。
 
-### 枚举 Enum
+### 方法六：枚举 Enum
 
 ```java
 public enum Singleton {
