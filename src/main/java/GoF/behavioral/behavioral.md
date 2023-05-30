@@ -9,5 +9,5 @@
 7. Memento 备忘录
 8. Observer 观察者
 9. State 状态
-10. Strategy 策略
+10. [Strategy 策略模式](strategy/strategy.md)
 11. Visitor 访问者
